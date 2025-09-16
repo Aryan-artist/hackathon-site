@@ -9,7 +9,7 @@ export function HeroSection() {
         <img
           src="/majestic-himalayan-monastery-with-prayer-flags-aga.jpg"
           alt="Sikkim Monastery"
-          className="w-full h-full object-cover opacity-20"
+          className="w-full h-full object-cover opacity-50"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/40 to-background/60" />
       </div>
@@ -21,7 +21,7 @@ export function HeroSection() {
             <span className="text-primary block">Sacred Monasteries</span>
           </h1>
 
-          <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto text-pretty">
+          <p className="text-lg md:text-xl text-muted-foreground font-bold mb-8 max-w-3xl mx-auto text-pretty">
             Immerse yourself in the spiritual heritage of the Himalayas through 360° virtual tours, interactive maps,
             and rich cultural experiences that bring ancient wisdom to life.
           </p>

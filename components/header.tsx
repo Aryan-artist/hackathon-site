@@ -49,7 +49,7 @@ export function Header() {
               onClick={() => window.open("https://play.google.com/store", "_blank")}
             >
               <Download className="w-3 h-3" />
-              <span>Play</span>
+              <span>Play Store</span>
             </Button>
             <Button
               variant="outline"

@@ -1,6 +1,8 @@
+'use client'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Calendar, MapPin, Clock, Users, Star } from "lucide-react"
+import { use } from "react"
 
 export function CulturalCalendarSection() {
   const events2025 = [
@@ -11,6 +13,7 @@ export function CulturalCalendarSection() {
       significance: "Beginning of the Nepali month of Magh, family rituals",
       type: "Hindu Festival",
       featured: false,
+   
     },
     {
       name: "Bhumchu",
@@ -19,6 +22,7 @@ export function CulturalCalendarSection() {
       significance: "Holy water vase ritual for fortune, prayers",
       type: "Buddhist Ritual",
       featured: true,
+     
     },
     {
       name: "Sonam Lhochhar",
@@ -181,7 +185,10 @@ export function CulturalCalendarSection() {
                         <span className="text-sm text-muted-foreground">{event.location}</span>
                       </div>
                       <p className="text-sm text-card-foreground">{event.significance}</p>
-                      <Button size="sm" className="w-full">
+                      <Button size="sm" 
+                      className="w-full"
+                      
+                      >
                         <Users className="w-4 h-4 mr-2" />
                         Book Participation
                       </Button>

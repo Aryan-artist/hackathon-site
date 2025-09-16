@@ -1,8 +1,14 @@
+'use client'
+
+import { useRouter } from 'next/navigation'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Archive, Search, BookOpen, ImageIcon, FileText, Zap } from "lucide-react"
 
+
 export function DigitalArchiveSection() {
+  const router = useRouter()
+
   const archiveItems = [
     {
       type: "Manuscript",
@@ -10,6 +16,7 @@ export function DigitalArchiveSection() {
       description: "Rare palm leaf manuscripts from the 15th century",
       image: "/ancient-tibetan-manuscript-with-gold-text.jpg",
       count: "247 documents",
+      url:"http://library.bdrc.io/?type%5B0%5D=Instance&sortBy=firstScanSyncDate_desc&uilang=en",
     },
     {
       type: "Mural",
@@ -17,6 +24,7 @@ export function DigitalArchiveSection() {
       description: "High-resolution scans of monastery murals",
       image: "/colorful-tibetan-buddhist-mural-painting.jpg",
       count: "156 murals",
+      url: "http://artsandculture.google.com/story/buddhist-art-in-sikkim-dastkari-haat-samiti/fgUxKf4J9R7vJA?hl=en",
     },
     {
       type: "Artifact",
@@ -24,6 +32,7 @@ export function DigitalArchiveSection() {
       description: "3D scanned ritual objects and sculptures",
       image: "/golden-buddhist-ritual-objects-and-statues.jpg",
       count: "89 artifacts",
+      url: "https://windhorsetour.com/tibet-culture/tibet-religious-objects",
     },
   ]
 
@@ -62,7 +71,7 @@ export function DigitalArchiveSection() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 max-w-7xl mx-auto">
           {archiveItems.map((item, index) => (
             <Card key={index} className="group hover:shadow-lg transition-all duration-300 border-border/50">
-              <div className="relative overflow-hidden rounded-t-lg">
+              <div className="relative overflow-hidden rounded-t-lg" style={{ top: "-24px" }}>
                 <img
                   src={item.image || "/placeholder.svg"}
                   alt={item.title}
@@ -82,7 +91,13 @@ export function DigitalArchiveSection() {
               </CardHeader>
 
               <CardContent>
-                <Button variant="outline" className="w-full flex items-center space-x-2 bg-transparent">
+                <Button
+                  variant="outline"
+                  className="w-full flex items-center space-x-2 bg-transparent"
+                  onClick={() => window.open(item.url, "_blank")}
+                  // onClick={() => window.location.href = "http://library.bdrc.io/?type%5B0%5D=Instance&sortBy=firstScanSyncDate_desc&uilang=en"}
+                  // onClick={() => router.push("/explore")}
+                >
                   <Archive className="w-4 h-4" />
                   <span>Explore Collection</span>
                 </Button>
